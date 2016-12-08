@@ -16,7 +16,7 @@ global $wp_object_cache;
 
 // Use this plugin only if Redis is enabled in WP Object Cache.
 if ( true === $wp_object_cache->redis_status() ) {
-    Cache::set_redis_instance( $wp_object_cache->redis_instance() );
+    Group_Cache::set_redis_instance( $wp_object_cache->redis_instance() );
 } else {
     return;
 }
