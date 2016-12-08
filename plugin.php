@@ -24,9 +24,9 @@ if ( true === $wp_object_cache->redis_status() ) {
 /**
  * Hook to cache setting to enable group handling.
  */
-add_action( 'redis_object_cache_set', __NAMESPACE__ . '\\Cache::add_to_group', 1, 3 );
+add_action( 'redis_object_cache_set', __NAMESPACE__ . '\\Group_Cache::add_to_group', 1, 3 );
 
 /**
  * Hook to cache deletion to clear a key from a included group cache.
  */
-add_action( 'redis_object_cache_delete', __NAMESPACE__ . '\\Cache::delete_from_group', 1, 2 );
+add_action( 'redis_object_cache_delete', __NAMESPACE__ . '\\Group_Cache::delete_from_group', 1, 2 );
