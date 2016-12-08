@@ -4,7 +4,7 @@
 
 This plugin enables group caching for sites using the [Redis Object Cache for WordPress dropin](https://github.com/devgeniem/wp-redis-object-cache-dropin).
 
-### Functions
+## Functions
 
 **add\_to\_group**
 
@@ -23,3 +23,20 @@ Usage:
 ```
 \Geniem\Group_Cache::delete_group( $group_key );
 ```
+
+## Excluding groups from caching
+
+The Redis dropin automatically caches all data stored with the wp cache functions into Redis. If you want to exclude some groups from being stored into the group cache, return `true`
+ from the `no_group_cache` filter for the corresponding group key.
+
+```
+function no_group_cache( $group, $key ) {
+    if ( 'no_caching_key' === $group ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+add_filter( 'geniem/cache/no_group_cache', 'no_group_cache', 1, 2 );
+```
+_This does not disable the initial key-value caching!_
