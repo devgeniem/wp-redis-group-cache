@@ -1,0 +1,25 @@
+{
+    "name": "devgeniem/wp-redis-object-group-cache",
+    "type": "wordpress-plugin",
+    "description": "A plugin extending the Redis Object Cache for WordPress with a group cache functionality",
+    "authors": [
+        {
+            "name": "Ville Siltala",
+            "email": "ville.siltala@geniem.com",
+            "homepage": "http://geniem.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.0.0"
+    },
+    "keywords": [
+        "wordpress", "redis", "plugin", "cache", "object cache"
+    ],
+    "license": "GPL-3.0",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "^1.0.12"
+    }
+}
