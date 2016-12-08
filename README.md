@@ -2,7 +2,7 @@
 
 # WP Redis Object Group Cache
 
-This plugin enables group caching for sites using the [Redis Object Cache for WordPress dropin](https://github.com/devgeniem/wp-redis-object-cache-dropin).
+This plugin enables group caching for sites using the [Redis Object Cache for WordPress](https://github.com/devgeniem/wp-redis-object-cache-dropin) dropin.
 
 ## Functions
 
