@@ -61,7 +61,7 @@ class Group_Cache {
     public static function delete_from_group( $key, $group ) {
 
         // Ignore this group?
-        if ( self::no_group_cache( $group ) ) {
+        if ( self::no_group_cache( $group, $key ) ) {
             return;
         }
 
@@ -99,7 +99,7 @@ class Group_Cache {
      * @param string $key   The cache key.
      * @return bool
      */
-    private function no_group_cache( $group, $key ) {
+    public static function no_group_cache( $group, $key ) {
 
         // Ignore empty and default groups.
         if ( empty( $group ) ) { return true; }
