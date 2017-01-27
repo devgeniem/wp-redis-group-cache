@@ -44,3 +44,9 @@ function no_group_cache( $group, $key ) {
 add_filter( 'geniem/cache/no_group_cache', 'no_group_cache', 1, 2 );
 ```
 _This does not disable the initial key-value caching!_
+
+## Maintainers
+[@villesiltala](https://github.com/villesiltala)
+
+## License
+GPLv3
