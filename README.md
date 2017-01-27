@@ -1,6 +1,7 @@
 ![geniem-github-banner](https://cloud.githubusercontent.com/assets/5691777/14319886/9ae46166-fc1b-11e5-9630-d60aa3dc4f9e.png)
 
 # WP Redis Group Cache
+![Latest Stable Version](https://poser.pugx.org/devgeniem/wp-redis-group-cache/v/stable)](https://packagist.org/packages/devgeniem/wp-redis-group-cache) [![Total Downloads](https://poser.pugx.org/devgeniem/wp-redis-group-cache/downloads)](https://packagist.org/packages/devgeniem/wp-redis-group-cache) [![Latest Unstable Version](https://poser.pugx.org/devgeniem/wp-redis-group-cache/v/unstable)](https://packagist.org/packages/devgeniem/wp-redis-group-cache) [![License](https://poser.pugx.org/devgeniem/wp-redis-group-cache/license)](https://packagist.org/packages/devgeniem/wp-redis-group-cache)
 
 This plugin enables group caching for sites using the [Redis Object Cache for WordPress](https://github.com/devgeniem/wp-redis-object-cache-dropin) dropin.
 
