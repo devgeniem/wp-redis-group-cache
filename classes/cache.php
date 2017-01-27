@@ -48,7 +48,6 @@ class Group_Cache {
 
         // Set the data into a hash set grouped by the group key.
         self::$redis_instance->hset( $group, $key, $timestamp );
-
     }
 
     /**
@@ -61,7 +60,7 @@ class Group_Cache {
     public static function delete_from_group( $key, $group ) {
 
         // Ignore this group?
-        if ( self::no_group_cache( $group ) ) {
+        if ( self::no_group_cache( $group, $key ) ) {
             return;
         }
 
@@ -76,18 +75,23 @@ class Group_Cache {
      * @param string $group The Redis hash key.
      */
     public static function delete_group( $group ) {
+        global $wp_object_cache;
 
         // Get all keys first.
         $keys = self::$redis_instance->hkeys( $group );
 
         if ( is_array( $keys ) ) {
             // Delete all data related to keys.
-            foreach ( $keys as $key => $value ) {
-                self::$redis_instance->del( $key );
+            foreach ( $keys as $key ) {
+                // Get the full key.
+                $full_key = $wp_object_cache->build_key( $key, $group );
+
+                // Delete the single key.
+                self::$redis_instance->del( $full_key );
             }
         }
 
-        // Delete the group and its keys.
+        // Delete the group and its content.
         self::$redis_instance->del( $group );
 
     }
@@ -99,7 +103,7 @@ class Group_Cache {
      * @param string $key   The cache key.
      * @return bool
      */
-    private function no_group_cache( $group, $key ) {
+    public static function no_group_cache( $group, $key ) {
 
         // Ignore empty and default groups.
         if ( empty( $group ) ) { return true; }

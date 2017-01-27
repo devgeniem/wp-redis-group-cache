@@ -1,5 +1,5 @@
 {
-    "name": "devgeniem/wp-redis-object-group-cache",
+    "name": "devgeniem/wp-redis-group-cache",
     "type": "wordpress-plugin",
     "description": "A plugin extending the Redis Object Cache for WordPress with a group cache functionality",
     "authors": [
