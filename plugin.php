@@ -3,8 +3,7 @@
  * Plugin Name: Redis Object Group Cache
  * Plugin URI: https://github.com/devgeniem/wp-redis-object-group-cache
  * Description: A plugin extending the Redis Object Cache for WordPress with a group cache functionality.
- * Version: 1.0.0
- * Version: 0.0.3
+ * Version: 1.0.2
  * Author: Geniem Oy / Ville Siltala
  * Author URI: http://www.geniem.com
  */
