@@ -50,6 +50,10 @@ add_filter( 'geniem/cache/no_group_cache', 'no_group_cache', 1, 2 );
 ```
 _Note that this does not disable the initial key-value caching!_
 
+## Example
+
+See this [Github gist](https://gist.github.com/villesiltala/f64b63070ed1dd082cb5ae0382974b8b) for a usage example.
+
 ## Maintainers
 [@villesiltala](https://github.com/villesiltala)
 
