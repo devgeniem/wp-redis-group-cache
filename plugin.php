@@ -3,7 +3,7 @@
  * Plugin Name: Redis Object Group Cache
  * Plugin URI: https://github.com/devgeniem/wp-redis-object-group-cache
  * Description: A plugin extending the Redis Object Cache for WordPress with a group cache functionality.
- * Version: 1.0.2
+ * Version: 2.0.0
  * Author: Geniem Oy / Ville Siltala
  * Author URI: http://www.geniem.com
  */
@@ -16,7 +16,7 @@ global $wp_object_cache;
 
 // Use this plugin only if Redis is enabled in WP Object Cache.
 if ( true === $wp_object_cache->redis_status() ) {
-    Group_Cache::set_redis_instance( $wp_object_cache->redis_instance() );
+    GroupCache::set_redis_instance( $wp_object_cache->redis_instance() );
 } else {
     return;
 }
@@ -24,9 +24,9 @@ if ( true === $wp_object_cache->redis_status() ) {
 /**
  * Hook to cache setting to enable group handling.
  */
-add_action( 'redis_object_cache_set', __NAMESPACE__ . '\\Group_Cache::add_to_group', 1, 3 );
+add_action( 'redis_object_cache_set', __NAMESPACE__ . '\\GroupCache::add_to_group', 1, 3 );
 
 /**
  * Hook to cache deletion to clear a key from a included group cache.
  */
-add_action( 'redis_object_cache_delete', __NAMESPACE__ . '\\Group_Cache::delete_from_group', 1, 2 );
+add_action( 'redis_object_cache_delete', __NAMESPACE__ . '\\GroupCache::delete_from_group', 1, 2 );

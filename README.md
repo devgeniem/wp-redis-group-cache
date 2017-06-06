@@ -31,7 +31,7 @@ This function deletes all data related to a group key by first fetching all keys
 Usage:
 
 ```
-\Geniem\Group_Cache::delete_group( $group_key );
+\Geniem\GroupCache::delete_group( $group_key );
 ```
 
 ## Excluding groups from caching

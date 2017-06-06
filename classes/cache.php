@@ -11,7 +11,7 @@ namespace Geniem;
  *
  * @package Geniem
  */
-class Group_Cache {
+class GroupCache {
 
     /**
      * @var $redis_instance
