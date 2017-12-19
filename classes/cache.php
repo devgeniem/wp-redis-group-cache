@@ -14,6 +14,8 @@ namespace Geniem;
 class GroupCache {
 
     /**
+     * This holds the Redis connection object.
+     *
      * @var $redis_instance
      *
      * Holds the connection object.
@@ -21,9 +23,9 @@ class GroupCache {
     protected static $redis_instance;
 
     /**
-     * A setter function for the connection object.
+     * A setter function for the Redis connection object.
      *
-     * @param object $redis_instance
+     * @param object $redis_instance A Predis instance.
      */
     public static function set_redis_instance( $redis_instance ) {
         self::$redis_instance = $redis_instance;
@@ -34,9 +36,9 @@ class GroupCache {
      * This function is hooked to the cache setting.
      * The value is not needed here, set a human readable timestamp instead.
      *
-     * @param string    $key      The Redis cache key.
-     * @param any       $value    The cache data.
-     * @param string    $group    The Redis hash key.
+     * @param string $key      The Redis cache key.
+     * @param mixed  $value    The cache data.
+     * @param string $group    The Redis hash key.
      */
     public static function add_to_group( $key, $value, $group ) {
 
@@ -44,18 +46,16 @@ class GroupCache {
             return;
         }
 
-        $timestamp = date_i18n('F d, Y H:i');
-
         // Set the data into a hash set grouped by the group key.
-        self::$redis_instance->hset( $group, $key, $timestamp );
+        self::$redis_instance->hset( $group, $key, $value );
     }
 
     /**
      * If a group key is set, deletes the key from the specified Redis hash.
      * This function is hooked to the cache deletion.
      *
-     * @param string    $key      The Redis cache key.
-     * @param string    $group    The Redis cache group key.
+     * @param string $key      The Redis cache key.
+     * @param string $group    The Redis cache group key.
      */
     public static function delete_from_group( $key, $group ) {
 
@@ -106,8 +106,10 @@ class GroupCache {
     public static function no_group_cache( $group, $key ) {
 
         // Ignore empty and default groups.
-        if ( empty( $group ) ) { return true; }
-        if ( 'default' === $group ) { return true; }
+        if ( empty( $group ) ) {
+			return true; }
+        if ( 'default' === $group ) {
+			return true; }
 
         // Filter the condition.
         $condition = apply_filters( 'geniem/cache/no_group_cache', false, $group, $key );
