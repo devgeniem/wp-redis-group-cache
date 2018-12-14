@@ -105,13 +105,23 @@ class GroupCache {
      */
     public static function no_group_cache( $group, $key ) {
 
-        // Ignore empty and default groups.
-        if ( empty( $group ) ) { return true; }
-        if ( 'default' === $group ) { return true; }
+        // Group blacklist
+        $blacklist = apply_filters( 'geniem/cache/no_group_cache/blacklist', [
+            'acf',
+            'posts',
+            'terms',
+            'options',
+            'dustpress/rendered',
+            'transient',
+            'default',
+        ]);
 
-        // Filter the condition.
-        $condition = apply_filters( 'geniem/cache/no_group_cache', false, $group, $key );
+        $no_group_cache = (
+            empty( $group ) || // No group
+            in_array( $group, $blacklist, true ) || // Group is in blacklist
+            apply_filters( 'geniem/cache/no_group_cache', false, $group, $key ) // Failed specific check
+        );
 
-        return $condition;
+        return $no_group_cache;
     }
 }
