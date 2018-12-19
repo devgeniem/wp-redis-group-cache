@@ -36,10 +36,10 @@ Usage:
 
 ## Excluding custom or including default groups to caching
 
-The Redis dropin automatically caches all data stored with WordPress Object Cache into Redis. If you want to modify which groups are stored you can use the two filters `geniem/cache/no_group_cache/blacklist` and `geniem/cache/no_group_cache`
+The Redis dropin automatically caches all data stored with WordPress Object Cache into Redis. If you want to modify which groups are stored you can use the two filters `geniem/cache/no_group_cache/blacklist` and `geniem/cache/no_group_cache`.
 
 ### Modifying the blacklist
-If you want to include some default groups like `acf` or `transient` or exclude custom ones for example from plugins that use it you can use the `geniem/cache/no_group_cache/blacklist` filter to modify an array of blacklisted groups.
+If you want to include some default groups like `acf` or `transient` or exclude custom ones for example from plugins that use it, you can use the `geniem/cache/no_group_cache/blacklist` filter to modify an array of blacklisted groups.
 ```php
 function group_cache_blacklist( array $groups ) : array {
 	$groups[] = 'customgroup';
@@ -60,7 +60,7 @@ add_filter( 'geniem/cache/no_group_cache/blacklist', 'group_cache_blacklist', 1,
 ### More specific selection if a group should be excluded
 
 You can do a more direct check if a group should be exluded by using the `geniem/cache/no_group_cache` filter.
-_Note this is applied after the blacklist check, so if the group is already on the blacklist this wont be checked._
+_Note this is applied after the blacklist check, so if the group is already on the blacklist this will not be checked._
 
 ```php
 function no_group_cache( string $group, string $key ) : bool {
