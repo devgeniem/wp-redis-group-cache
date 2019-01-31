@@ -107,13 +107,39 @@ class GroupCache {
 
         // Group blacklist
         $blacklist = apply_filters( 'geniem/cache/no_group_cache/blacklist', [
-            'acf',
             'posts',
             'terms',
             'options',
-            'dustpress/rendered',
             'transient',
             'default',
+            'blog-details',
+            'blog-id-cache',
+            'blog-lookup',
+            'global-posts',
+            'networks',
+            'rss',
+            'sites',
+            'site-details',
+            'site-lookup',
+            'site-options',
+            'site-transient',
+            'users',
+            'useremail',
+            'userlogins',
+            'usermeta',
+            'user_meta',
+            'userslugs',
+            'terms',
+            'plugins',
+            'counts',
+            'comment',
+
+            'dustpress/rendered',  // Dustpress
+            'acf',                 // Advanced Custom Fields
+            'dymoloader1.0',       // Dynamic .mo loader
+            'stateless_post_meta', // wp stateless
+            'pll_count_posts',     // polylang
+            'the_seo_framework',   // seo framework
         ]);
 
         $no_group_cache = (
