@@ -6,7 +6,25 @@
 [![Latest Unstable Version](https://poser.pugx.org/devgeniem/wp-redis-group-cache/v/unstable)](https://packagist.org/packages/devgeniem/wp-redis-group-cache)
 [![License](https://poser.pugx.org/devgeniem/wp-redis-group-cache/license)](https://packagist.org/packages/devgeniem/wp-redis-group-cache)
 
-This plugin enables group caching for sites using the [Redis Object Cache for WordPress](https://github.com/devgeniem/wp-redis-object-cache-dropin) dropin.
+This WordPress mu-plugin enables group caching for sites using the [Redis Object Cache for WordPress](https://github.com/devgeniem/wp-redis-object-cache-dropin) dropin.
+
+## Installation
+
+Install with composer:
+
+```
+$ composer require devgeniem/wp-redis-group-cache
+```
+
+OR add it into your `composer.json`:
+
+```json
+{
+  "require": {
+    "devgeniem/wp-redis-group-cache": "^3.0.0"
+  }
+}
+```
 
 ## Functionalities
 
