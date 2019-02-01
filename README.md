@@ -74,6 +74,31 @@ add_filter( 'geniem/cache/no_group_cache/blacklist', 'group_cache_blacklist', 1,
 - dustpress/rendered
 - transient
 - default
+- blog-details
+- blog-id-cache
+- blog-lookup
+- global-posts
+- networks
+- rss
+- sites
+- site-details
+- site-lookup
+- site-options
+- site-transient
+- users
+- useremail
+- userlogins
+- usermeta
+- user_meta
+- userslugs
+- terms
+- plugins
+- counts
+- comment
+- dymoloader1.0
+- stateless_post_meta
+- pll_count_posts
+- the_seo_framework
 
 ### More specific selection if a group should be excluded
 
