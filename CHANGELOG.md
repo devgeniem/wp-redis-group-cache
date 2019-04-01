@@ -10,9 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added the following to the blacklist:
 	- post_meta
 	- post_tag_relationships
+	- post_translations_relationships
 	- language_relationships
 	- term_language_relationships
-	- term_translations_relationship
+	- term_translations_relationships
+	- timeinfo
 
 ## [3.1.0] - 2019-02-04
 ### Changed

@@ -135,9 +135,11 @@ class GroupCache {
             'comment',
             'post_meta',
             'post_tag_relationships',
+            'post_translations_relationships',
             'language_relationships',
             'term_language_relationships',
-            'term_translations_relationship',
+            'term_translations_relationships',
+            'timeinfo',
 
             'dustpress/rendered',  // Dustpress
             'acf',                 // Advanced Custom Fields
