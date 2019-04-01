@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added the following to the blacklist:
+	- post_meta
+	- post_tag_relationships
+	- language_relationships
+	- term_language_relationships
+	- term_translations_relationship
+
 ## [3.1.0] - 2019-02-04
 ### Changed
 - Changed this plugin to mu-plugin so that it gets loaded early enough and is also working in network admin

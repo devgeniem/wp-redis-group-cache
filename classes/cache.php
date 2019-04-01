@@ -133,6 +133,11 @@ class GroupCache {
             'plugins',
             'counts',
             'comment',
+            'post_meta',
+            'post_tag_relationships',
+            'language_relationships',
+            'term_language_relationships',
+            'term_translations_relationship',
 
             'dustpress/rendered',  // Dustpress
             'acf',                 // Advanced Custom Fields
