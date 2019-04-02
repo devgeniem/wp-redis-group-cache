@@ -67,7 +67,7 @@ add_filter( 'geniem/cache/no_group_cache/blacklist', 'group_cache_blacklist', 1,
 ```
 
 #### Exluded groups by default
-[classes/cache.php](blob/master/classes/cache.php#L109)
+[classes/cache.php](classes/cache.php#L109)
 
 ### More specific selection if a group should be excluded
 
